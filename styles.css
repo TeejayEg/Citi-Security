@@ -17,6 +17,7 @@ body {
   padding: 1px;
 }
 
+/* Header */
 header {
   background-color: #3566ee;
   color: #fff;
@@ -24,17 +25,28 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+}
+
+header .logo {
+  margin-left: 20px; /* Align the logo to the left */
 }
 
 header .logo img {
   height: 40px;
 }
 
+header nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Center the nav */
+}
+
 header nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  display: flex; /* Keep it horizontal on larger screens */
+  display: flex; /* Horizontal navigation */
 }
 
 header ul li {
@@ -51,7 +63,21 @@ header nav ul li a:hover {
 }
 
 header .cta {
-  float: right;
+  margin-right: 20px; /* Align the button to the right */
+}
+
+header .cta .btn {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #3566ee;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+header .cta .btn:hover {
+  background-color: #2b48a7;
+  color: #fff;
 }
 
 /* Main Content */
@@ -196,6 +222,16 @@ form {
     text-align: center;
   }
 
+  header .logo {
+    margin-left: 0;
+  }
+
+  header nav {
+    position: relative;
+    left: auto;
+    transform: none;
+  }
+
   header nav ul {
     flex-direction: column;
     align-items: center;
@@ -206,12 +242,11 @@ form {
   }
 
   header .cta {
-    float: none;
     margin-top: 10px;
   }
 
   .floating-box {
-    width: 90%; /* Expand width for smaller screens */
+    width: 90%;
     margin: 20px auto;
   }
 
