@@ -21,6 +21,7 @@ header {
   background-color: #3566ee;
   color: #fff;
   padding: 20px 0;
+  text-align: center;
 }
 
 header .logo img {
@@ -49,7 +50,8 @@ header nav ul li a:hover {
 }
 
 header .cta {
-  float: right;
+  float: none;
+  margin-top: 10px;
 }
 
 .main {
@@ -57,20 +59,8 @@ header .cta {
 }
 
 .image {
-  width: 1200px;
-  height: 500px;
-  border-radius: 10px;
-}
-
-.image1 {
-  width: 1100px;
-  height: 500px;
-  border-radius: 10px;
-}
-
-.image2 {
-  width: 1100px;
-  height: 500px;
+  width: 100%;
+  height: auto;
   border-radius: 10px;
 }
 
@@ -80,7 +70,9 @@ header .cta {
   border-radius: 10px;
   box-shadow: 0 40px 70px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto; /* Center the floating box */
 }
 
 .floating-box h3 {
@@ -99,12 +91,8 @@ header .cta {
   border-radius: 10px;
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.1);
   margin-top: 70px;
-  width: 1000px;
-  max-width: 1500px;
-}
-
-.floating-box p {
-  margin-top: 0;
+  width: 100%;
+  max-width: 1000px;
 }
 
 .guide-section {
@@ -136,15 +124,14 @@ footer {
   text-align: center;
 }
 
-footer .left {
-  float: left;
-}
-
+footer .left,
 footer .right {
-  float: right;
+  float: none;
+  text-align: center;
+  display: block;
+  margin-bottom: 10px;
 }
 
-/* Form Styles */
 form {
   background-color: #f9f9f9;
   padding: 30px;
@@ -195,4 +182,48 @@ form {
   color: #155724;
   padding: 15px;
   border-radius: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  header .cta {
+    float: none;
+    text-align: center;
+  }
+
+  .floating-box {
+    width: 90%; /* Expand width for smaller screens */
+    margin: 20px auto;
+  }
+
+  .floating-box1 {
+    width: 95%;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  footer .left, footer .right {
+    text-align: center;
+    float: none;
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .image, .image1, .image2 {
+    width: 100%;
+    height: auto;
+  }
+
+  form {
+    width: 95%;
+  }
 }
