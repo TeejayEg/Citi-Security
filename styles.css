@@ -21,7 +21,9 @@ header {
   background-color: #3566ee;
   color: #fff;
   padding: 20px 0;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header .logo img {
@@ -32,11 +34,10 @@ header nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  text-align: center;
+  display: flex; /* Keep it horizontal on larger screens */
 }
 
 header ul li {
-  display: inline-block;
   margin: 0 10px;
 }
 
@@ -50,10 +51,10 @@ header nav ul li a:hover {
 }
 
 header .cta {
-  float: none;
-  margin-top: 10px;
+  float: right;
 }
 
+/* Main Content */
 .main {
   padding: 20px 0;
 }
@@ -64,6 +65,7 @@ header .cta {
   border-radius: 10px;
 }
 
+/* Floating Box */
 .floating-box {
   background-color: #fff;
   padding: 20px;
@@ -72,7 +74,7 @@ header .cta {
   margin-top: 20px;
   width: 100%;
   max-width: 300px;
-  margin: 20px auto; /* Center the floating box */
+  margin: 20px auto;
 }
 
 .floating-box h3 {
@@ -103,6 +105,7 @@ header .cta {
   padding: 40px 0;
 }
 
+/* Buttons */
 .btn {
   display: inline-block;
   background-color: #3566ee;
@@ -117,6 +120,7 @@ header .cta {
   background-color: #3436b9;
 }
 
+/* Footer */
 footer {
   background-color: #f4f4f4;
   color: #333;
@@ -132,6 +136,7 @@ footer .right {
   margin-bottom: 10px;
 }
 
+/* Form Styles */
 form {
   background-color: #f9f9f9;
   padding: 30px;
@@ -186,14 +191,23 @@ form {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  header nav ul li {
-    display: block;
+  header {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    text-align: center;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header ul li {
     margin: 10px 0;
   }
 
   header .cta {
     float: none;
-    text-align: center;
+    margin-top: 10px;
   }
 
   .floating-box {
