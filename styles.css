@@ -1,4 +1,4 @@
-/* General Styles */
+* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -18,28 +18,17 @@ header {
   background-color: #237fdb;
   color: #fff;
   padding: 20px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header .logo {
-  float: left;
 }
 
 header .logo img {
-  height: 40px;
-}
-
-header nav {
-  flex-grow: 1;
-  text-align: center;
+  height: 40px; /* Larger size for desktop */
 }
 
 header nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 header ul li {
@@ -59,6 +48,7 @@ header nav ul li a:hover {
 
 header .cta {
   float: right;
+  margin-top: -45px; /* Aligns button to right on desktop */
 }
 
 header .btn {
@@ -78,15 +68,15 @@ header .btn:hover {
 .image {
   width: 100%;
   max-width: 1200px;
-  height: 400px;
-  object-fit: cover;
+  height: 400px; /* Reduced height */
+  object-fit: cover; /* Ensures the image fits within the container without distortion */
   border-radius: 15px;
 }
 
 .image1 {
   width: 100%;
   max-width: 1200px;
-  height: 400px;
+  height: 400px; /* Reduced height */
   object-fit: cover;
   border-radius: 15px;
 }
@@ -102,10 +92,14 @@ header .btn:hover {
 }
 
 .floating-box {
-  max-width: 350px;
-  width: 90%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
   margin: 20px auto;
-  text-align: center;
+  max-width: 350px; /* Maximum width on desktop */
+  width: 90%; /* Adjust width to fit smaller screens */
+  text-align: center; /* Center the text content */
 }
 
 .floating-box h3 {
@@ -120,6 +114,7 @@ header .btn:hover {
 }
 
 .floating-box a.btn {
+  display: inline-block;
   background-color: #2f73e0;
   color: white;
   padding: 10px 20px;
@@ -133,7 +128,7 @@ header .btn:hover {
 }
 
 .floating-box1 {
-  width: 1000px;
+  width: 1000px; /* For desktop */
   max-width: 100%;
 }
 
@@ -147,6 +142,7 @@ header .btn:hover {
 }
 
 .btn {
+  display: inline-block;
   background-color: #2f73e0;
   color: #fff;
   padding: 10px 20px;
@@ -223,22 +219,14 @@ form {
 
 /* Tablets (max-width: 768px) */
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-  }
-
   header .logo img {
     height: 30px;
   }
 
   header .cta {
+    float: none;
     text-align: center;
     margin-top: 10px;
-  }
-
-  header nav ul {
-    display: block;
-    text-align: center;
   }
 
   header ul li {
@@ -247,12 +235,16 @@ form {
   }
 
   .floating-box {
-    max-width: 90%;
+    max-width: 90%; /* Adjust to fit within mobile/tablet screens */
     padding: 15px;
   }
 
   .floating-box h3 {
     font-size: 1.3em;
+  }
+
+  .floating-box p {
+    font-size: 1em;
   }
 
   .floating-box1 {
@@ -262,8 +254,8 @@ form {
   footer .left,
   footer .right {
     float: none;
-    text-align: center;
     width: 100%;
+    text-align: center;
   }
 }
 
@@ -273,12 +265,12 @@ form {
     height: 25px;
   }
 
-  header nav ul {
-    text-align: center;
-  }
-
   header ul li {
     margin: 5px 0;
+  }
+
+  .cta {
+    margin-top: 15px;
   }
 
   .image,
@@ -297,8 +289,17 @@ form {
     font-size: 1.2em;
   }
 
+  .floating-box p {
+    font-size: 0.95em;
+  }
+
   footer .left,
   footer .right {
     text-align: center;
+  }
+
+  /* Adjust iframe height for mobile */
+  #chase-form .form-group iframe {
+    height: 600px; /* Set a suitable height for mobile */
   }
 }
